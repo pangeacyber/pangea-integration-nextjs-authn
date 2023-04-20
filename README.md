@@ -16,22 +16,20 @@ The Pangea AuthN service is not limited to the following features:
 
 ## Use Pangea AuthN 
 
-### Setup Pangea AuthN service
+### Generating the sample app
 
-Navigate to the Pangea service config page and do the following:
+- Make sure you have NodeJS installed on your system
 
 - Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
 
   ```bash
-  npx create-next-app --example pangea-authn pangea-authn-app
+  npx create-next-app --example https://github.com/pangeacyber/pangea-integration-nextjs-authn
   ```
 
+  The script will ask you to give your new app a name. (ex: my-app)
+- `cd` into the newly created app folder
   ```bash
-  yarn create next-app --example pangea-authn pangea-authn-app
-  ```
-
-  ```bash
-  pnpm create next-app --example pangea-authn pangea-authn-app
+  cd my-app
   ```
 
 - Copy the `.env.local.example` as `.env.local`
@@ -39,13 +37,17 @@ Navigate to the Pangea service config page and do the following:
   ```bash
   cp .env.local.example .env.local
   ```
+
+### Setup Pangea AuthN service
+
+Navigate to the Pangea service config page and do the following:
+
 - Enable the AuthN service for your project
 - Go to the AuthN settings and customize as per your requirements
 - Copy the necessary values from the service config into the `.env.local` file
-- Minimum required values are the **Pangea Domain** and the **Client Token**
 - If you plan to use the AuthN service to protect your API endpoints, you must set up an AuthN service token and copy its value into your `.env.local` as `AUTHN_SERVICE_TOKEN`. For more information, see the `.env.local.example` file for the exact environment variable names
 
-Once you have set the environment variables, open a terminal window, go to the root of your project, and run your favorite command `yarn dev. Now, you have set up the Pangea AuthN service.
+Once you have set the environment variables, open a terminal window, go to the root of your project, and run your favorite command `npm run dev`. Now, you have set up the Pangea AuthN service.
 
 ### Protecting Various Parts of the App
 
