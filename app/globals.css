@@ -134,6 +134,12 @@ header .nav > * {
   flex-wrap: nowrap;
 }
 
+button {
+  padding: 0.8em;
+  border-radius: 0.5em;
+  line-height: 1.4em;
+}
+
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
