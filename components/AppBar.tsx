@@ -19,7 +19,6 @@ const AppBar = () => {
     <header>
       <div className="nav">
         <Link href={"/"}>Home</Link>
-        <Link href={"/news"}>News</Link>
         {authenticated && (
           <Link href={"/user"}>Profile ({user.profile.first_name})</Link>
         )}
