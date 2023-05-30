@@ -3,7 +3,7 @@
 import { useAuth } from "@pangeacyber/react-auth";
 import styles from "./page.module.css";
 
-export default function Home() {
+const Home = () => {
   const { authenticated } = useAuth();
 
   return (
@@ -37,3 +37,5 @@ export default function Home() {
     </main>
   );
 }
+
+export default Home;
