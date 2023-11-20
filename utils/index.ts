@@ -1,6 +1,4 @@
-import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
-
-const getBearerToken = (req: NextApiRequest) => {
+const getBearerToken = (req) => {
   const authorizationHeader =
     req.headers instanceof Headers
       ? req.headers.get("authorization")
@@ -43,8 +41,8 @@ const validateToken = async (token: string) => {
   return result;
 };
 
-export const withAPIAuthentication = (apiHandler: NextApiHandler) => {
-  return async (req: NextApiRequest, res: NextApiResponse) => {
+export const withAPIAuthentication = (apiHandler) => {
+  return async (req, res) => {
     // Check the environment variables
     if (
       !process.env.NEXT_PUBLIC_PANGEA_DOMAIN ||
