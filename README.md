@@ -1,20 +1,20 @@
 # Next.js and Pangea AuthN Example
 
-## Introduction 
+## Introduction
 
 The Next.js and Pangea AuthN Example is a code repository that provides a simple way to add authentication to your Next.js web application using the Pangea AuthN service. It includes examples of how to implement user sign-up, sign-in, and sign-out functionality, how to protect client-side pages and API endpoints from public access. The example also includes instructions on setting up the Pangea AuthN service for your project and deploying your application. Most of the NextJS applications need authentication to protect specific pages and API endpoints from general public visibility. This example shows how you can easily add authentication to your NextJS app using the Pangea AuthN service.
 
 ## Features
 
 The Pangea AuthN service is not limited to the following features:
+
 - Sign up
 - Sign in
 - Sign out
 - Protecting client-side pages
 - Protecting API endpoints
 
-
-## Use Pangea AuthN 
+## Use Pangea AuthN
 
 ### Generating the sample app
 
@@ -27,7 +27,9 @@ The Pangea AuthN service is not limited to the following features:
   ```
 
   The script will ask you to give your new app a name. (ex: my-app)
+
 - `cd` into the newly created app folder
+
   ```bash
   cd my-app
   ```
@@ -57,7 +59,10 @@ There are certain parts of an application that developers want to hide from the 
 
 - API endpoints: Refer to the example in `/app/api/user/me/route.ts` and wrap your API handler with the `withAPIAuthentication` helper function.
 
-
 ## How to Deploy
 
 You can deploy your project as any other NextJS app. Refer to the [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)) for more information.
+
+You can also deploy your project using the button below:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fpangeacyber%2Fpangea-integration-nextjs-authn&env=NEXT_PUBLIC_PANGEA_DOMAIN,NEXT_PUBLIC_AUTHN_CLIENT_TOKEN,NEXT_PUBLIC_AUTHN_HOSTED_LOGIN_URL,AUTHN_SERVICE_TOKEN&envDescription=Pangea%20AuthN%20Service%20Token%2C%20Pangea%20Domain%2C%20Pangea%20AuthN%20Client%20Token%2C%20Pangea%20Hosted%20Login%20URL&envLink=https%3A%2F%2Fconsole.pangea.cloud%2Fservice%2Fauthn&project-name=my-pangea-authn-project&repository-name=my-pangea-authn-project)
