@@ -1,8 +1,8 @@
-# Next.js and Pangea AuthN Example
+# Next.js and Pangea AuthN Integration
 
 ## Introduction
 
-The Next.js and Pangea AuthN Example is a code repository that provides a simple way to add authentication to your Next.js web application using the Pangea AuthN service. It includes examples of how to implement user sign-up, sign-in, and sign-out functionality, how to protect client-side pages and API endpoints from public access. The example also includes instructions on setting up the Pangea AuthN service for your project and deploying your application. Most of the NextJS applications need authentication to protect specific pages and API endpoints from general public visibility. This example shows how you can easily add authentication to your NextJS app using the Pangea AuthN service.
+The Next.js and Pangea AuthN Integration is a code repository that provides a simple way to add authentication to your Next.js web application using the Pangea AuthN service. It includes examples of how to implement user sign-up, sign-in, and sign-out functionality, how to protect client-side pages and API endpoints from public access. The example also includes instructions on setting up the Pangea AuthN service for your project and deploying your application. Most of the NextJS applications need authentication to protect specific pages and API endpoints from general public visibility. This example shows how you can easily add authentication to your NextJS app using the Pangea AuthN service.
 
 ## Features
 
