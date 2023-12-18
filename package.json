@@ -6,10 +6,12 @@
         "start": "next start"
     },
     "dependencies": {
+        "@node-rs/crc32": "^1.7.2",
+        "@node-rs/crc32-darwin-arm64": "^1.7.2",
         "@pangeacyber/react-auth": "^0.0.5",
         "eslint-config-next": "^14.0.3",
         "next": "^14.0.3",
-        "pangea-node-sdk": "^3.2.0",
+        "pangea-node-sdk": "file:pangea-node-sdk-v3.4.0-beta3.tgz",
         "react": "^18.2.0",
         "react-dom": "^18.2.0"
     },
@@ -17,6 +19,7 @@
         "@types/node": "^18.0.0",
         "@types/react": "^18.0.14",
         "@types/react-dom": "^18.0.5",
+        "native-ext-loader": "^2.3.0",
         "typescript": "^4.7.4"
     }
 }

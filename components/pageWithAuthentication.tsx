@@ -10,7 +10,7 @@ const pageWithAuthentication = (Component) => {
       if (!authenticated) {
         login();
       }
-    }, [authenticated]);
+    }, [authenticated, login]);
 
     return !!authenticated ? <Component /> : null;
   };
