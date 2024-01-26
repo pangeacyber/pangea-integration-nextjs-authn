@@ -18,7 +18,7 @@ The Pangea AuthN service is not limited to the following features:
 
 ### Generating the sample app
 
-- Make sure you have NodeJS (v16.19.0 or later) installed on your system
+- Make sure you have NodeJS (v18 or later) installed on your system
 
 - Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
 
