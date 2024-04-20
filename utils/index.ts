@@ -17,7 +17,7 @@ const validateToken = async (token: string) => {
   const result = false;
 
   if (token) {
-    const SERVICEURL = `https://authn.${process.env.NEXT_PUBLIC_PANGEA_DOMAIN}/v1/client/token/check`;
+    const SERVICEURL = `https://authn.${process.env.PANGEA_DOMAIN}/v1/client/token/check`;
     try {
       const response = await fetch(SERVICEURL, {
         method: "POST",
