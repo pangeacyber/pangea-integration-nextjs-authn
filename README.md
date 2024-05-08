@@ -34,10 +34,10 @@ The Pangea AuthN service is not limited to the following features:
   cd my-app
   ```
 
-- Copy the `.env.local.example` as `.env.local`
+- Copy the `.env.example` as `.env.local`
 
   ```bash
-  cp .env.local.example .env.local
+  cp .env.example .env.local
   ```
 
 ### Setup Pangea AuthN service
@@ -47,7 +47,7 @@ Navigate to the Pangea service config page and do the following:
 - Enable the AuthN service for your project
 - Go to the AuthN settings and customize as per your requirements
 - Copy the necessary values from the service config into the `.env.local` file
-- If you plan to use the AuthN service to protect your API endpoints, you must set up an AuthN service token and copy its value into your `.env.local` as `AUTHN_SERVICE_TOKEN`. For more information, see the `.env.local.example` file for the exact environment variable names
+- If you plan to use the AuthN service to protect your API endpoints, you must set up an AuthN service token and copy its value into your `.env.local` as `PANGEA_TOKEN`. For more information, see the `.env.example` file for the exact environment variable names
 
 Once you have set the environment variables, open a terminal window, go to the root of your project, and run your favorite command `npm run dev`. Now, you have set up the Pangea AuthN service.
 
@@ -65,4 +65,4 @@ You can deploy your project as any other NextJS app. Refer to the [Vercel](https
 
 You can also deploy your project using the button below:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fpangeacyber%2Fpangea-integration-nextjs-authn&env=NEXT_PUBLIC_PANGEA_DOMAIN,NEXT_PUBLIC_AUTHN_CLIENT_TOKEN,NEXT_PUBLIC_AUTHN_HOSTED_LOGIN_URL,AUTHN_SERVICE_TOKEN&envDescription=Pangea%20AuthN%20Service%20Token%2C%20Pangea%20Domain%2C%20Pangea%20AuthN%20Client%20Token%2C%20Pangea%20Hosted%20Login%20URL&envLink=https%3A%2F%2Fconsole.pangea.cloud%2Fservice%2Fauthn&project-name=my-pangea-authn-project&repository-name=my-pangea-authn-project)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fpangeacyber%2Fpangea-integration-nextjs-authn&env=NEXT_PUBLIC_PANGEA_DOMAIN,NEXT_PUBLIC_AUTHN_CLIENT_TOKEN,NEXT_PUBLIC_AUTHN_HOSTED_LOGIN_URL,PANGEA_TOKEN,PANGEA_DOMAIN&envDescription=Pangea%20AuthN%20Service%20Token%2C%20Pangea%20Domain%2C%20Pangea%20AuthN%20Client%20Token%2C%20Pangea%20Hosted%20Login%20URL&envLink=https%3A%2F%2Fconsole.pangea.cloud%2Fservice%2Fauthn&project-name=my-pangea-authn-project&repository-name=my-pangea-authn-project)
