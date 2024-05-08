@@ -1,14 +1,10 @@
 import { PangeaConfig, AuthNService, PangeaErrors } from "pangea-node-sdk";
-import type { NextApiRequest, NextApiResponse } from "next";  
 
 const config = new PangeaConfig({ domain: process.env.PANGEA_DOMAIN });
 const authn = new AuthNService(process.env.PANGEA_TOKEN, config);
 
-const getBearerToken = (req: NextApiRequest) => {
-  const authorizationHeader =
-  req.headers instanceof Headers
-  ? req.headers.get("authorization")
-  : req.headers?.authorization;
+const getBearerToken = (req: Request) => {
+  const authorizationHeader = req.headers.get("authorization")
   
   const authorizationHeaderParts = authorizationHeader?.split(" ");
   
@@ -46,7 +42,7 @@ const validateToken = async (token: string) => {
 };
   
 // Fetch user Info
-export const getUserInfo = async (req: NextApiRequest) => {
+export const getUserInfo = async (req: Request) => {
   const token = getBearerToken(req);
   const result = {userEmail: "", userProfile: ""};
 
@@ -83,9 +79,9 @@ export const getUserInfo = async (req: NextApiRequest) => {
 // Middleware to check the authentication
 // ONLY USE THIS ON SERVER SIDE
 export const withAPIAuthentication = <T>(  
-  apiHandler: (req: NextApiRequest, res: NextApiResponse) => Promise<T>,  
+  apiHandler: (req: Request, res: Response) => Promise<T>,  
 ) => {  
-  return async (req: NextApiRequest, res: NextApiResponse) => {
+  return async (req: Request, res: Response) => {
     // Check the environment variables
     if (
       !process.env.PANGEA_DOMAIN || 
@@ -94,14 +90,18 @@ export const withAPIAuthentication = <T>(
         console.error(
           "Missing environment variables, please make sure you have PANGEA_DOMAIN and PANGEA_TOKEN set in your .env file"
           );
-          return res.status(401).json("Unauthorized");
+          return new Response("Unauthorized", {
+            status: 401
+          });
         }
         
     const isTokenValid = await validateToken(getBearerToken(req));
     
     // Authentication failed, return 401
     if (!isTokenValid) {
-      return res.status(401).json("Unauthorized");
+      return new Response("Unauthorized", {
+        status: 401
+      });
     }
         
     // We are good to continue
