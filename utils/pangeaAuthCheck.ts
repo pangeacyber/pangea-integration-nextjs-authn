@@ -34,7 +34,7 @@ const validateToken = async (token: string) => {
         console.error(error.toString());
       } else {
         console.error(
-          "Error occured during token validation. Looks like environment variables haven't been set correctly, or the service token has expired",
+          "Error occurred during token validation. Looks like environment variables haven't been set correctly, or the service token has expired",
           error
           );
         }
