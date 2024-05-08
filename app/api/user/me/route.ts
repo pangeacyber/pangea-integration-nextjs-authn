@@ -1,4 +1,4 @@
-import { withAPIAuthentication } from "../../../../utils";
+import { withAPIAuthentication } from "../../../../utils/pangeaAuthCheck";
 
 const apiHandler = async () => {
   return new Response(
