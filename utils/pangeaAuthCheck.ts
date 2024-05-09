@@ -1,6 +1,5 @@
 import { PangeaConfig, AuthNService, PangeaErrors } from "pangea-node-sdk";
-import type { NextApiResponse } from "next";
-import type { NextRequest } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 
 const config = new PangeaConfig({ domain: process.env.PANGEA_DOMAIN });
 const authn = new AuthNService(process.env.PANGEA_TOKEN, config);
@@ -78,24 +77,22 @@ export const getUserInfo = async (req: NextRequest) => {
 // Middleware to check the authentication
 // ONLY USE THIS ON SERVER SIDE
 export const withAPIAuthentication = <T>(
-  apiHandler: (req: NextRequest, res: NextApiResponse) => Promise<T>,
+  apiHandler: (req: NextRequest, res: NextResponse) => Promise<T>,
 ) => {
-  return async (req: NextRequest, res: NextApiResponse) => {
+  return async (req: NextRequest, res: NextResponse) => {
     // Check the environment variables
     if (!process.env.PANGEA_DOMAIN || !process.env.PANGEA_TOKEN) {
       console.error(
         "Missing environment variables, please make sure you have PANGEA_DOMAIN and PANGEA_TOKEN set in your .env file",
       );
-      return res.status(401).json("Unauthorized");
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
     const isTokenValid = await validateToken(getBearerToken(req));
 
     // Authentication failed, return 401
     if (!isTokenValid) {
-      return new Response("Unauthorized", {
-        status: 401
-      });
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
     }
 
     // We are good to continue
