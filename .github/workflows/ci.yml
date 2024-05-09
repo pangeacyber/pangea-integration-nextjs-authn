@@ -25,6 +25,8 @@ concurrency:
 
 env:
   NEXT_TELEMETRY_DISABLED: 1
+  PANGEA_DOMAIN: placeholder
+  PANGEA_TOKEN: placeholder
 
 jobs:
   prefetch:
