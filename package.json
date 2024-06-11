@@ -6,7 +6,7 @@
         "start": "next start"
     },
     "dependencies": {
-        "@pangeacyber/react-auth": "^0.0.12",
+        "@pangeacyber/react-auth": "^0.0.13",
         "eslint-config-next": "^14.2.3",
         "next": "^14.2.3",
         "pangea-node-sdk": "^3.9.0",
