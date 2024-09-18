@@ -10,7 +10,7 @@
         "eslint-config-next": "^14.2.11",
         "next": "^14.2.12",
         "pangea-node-sdk": "^3.11.0",
-        "react": "^18.3.0",
+        "react": "^18.3.1",
         "react-dom": "^18.3.1"
     },
     "devDependencies": {
