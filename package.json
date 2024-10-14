@@ -7,8 +7,8 @@
     },
     "dependencies": {
         "@pangeacyber/react-auth": "^0.0.14",
-        "eslint-config-next": "^14.2.14",
-        "next": "^14.2.14",
+        "eslint-config-next": "^14.2.15",
+        "next": "^14.2.15",
         "pangea-node-sdk": "^3.11.0",
         "react": "^18.3.1",
         "react-dom": "^18.3.1"
