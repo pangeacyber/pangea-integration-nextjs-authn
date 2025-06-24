@@ -74,12 +74,15 @@ export const getUserInfo = async (req: NextRequest) => {
   return result;
 };
 
+type NextHandler<T = unknown> = (
+  req: NextRequest,
+  arg?: T
+) => Promise<Response> | Promise<NextResponse> | NextResponse | Response;
+
 // Middleware to check the authentication
 // ONLY USE THIS ON SERVER SIDE
-export const withAPIAuthentication = <T>(
-  apiHandler: (req: NextRequest, res: NextResponse) => Promise<T>,
-) => {
-  return async (req: NextRequest, res: NextResponse) => {
+export const withAPIAuthentication = <T>(apiHandler: NextHandler<T>) => {
+  return async (req: NextRequest): Promise<Response> => {
     // Check the environment variables
     if (!process.env.PANGEA_DOMAIN || !process.env.PANGEA_TOKEN) {
       console.error(
@@ -96,6 +99,6 @@ export const withAPIAuthentication = <T>(
     }
 
     // We are good to continue
-    return await apiHandler(req, res);
+    return await apiHandler(req);
   };
 };

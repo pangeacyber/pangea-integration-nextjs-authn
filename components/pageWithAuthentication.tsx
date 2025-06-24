@@ -1,5 +1,4 @@
 import { useAuth } from "@pangeacyber/react-auth";
-import { useRouter } from "next/router";
 import { useEffect } from "react";
 
 const pageWithAuthentication = (Component) => {
@@ -10,7 +9,7 @@ const pageWithAuthentication = (Component) => {
       if (!authenticated) {
         login();
       }
-    }, [authenticated]);
+    }, [authenticated, login]);
 
     return !!authenticated ? <Component /> : null;
   };
